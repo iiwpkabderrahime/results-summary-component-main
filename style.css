@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --Light-red: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+  --White: hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-grayblue: hsl(224, 30%, 27%);
+  --Lightslate-blue-background: hsl(252, 100%, 67%);
+  --Lightroyal-blue-background: hsl(241, 81%, 54%);
+  --Violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%);
+}
+body {
+  font-family: "Hanken Grotesk", "sans-serif";
+  height: 100vh;
+  padding: 2rem;
+  background-color: var(--Pale-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+main {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+main > section {
+  display: flex;
+  background-color: white;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+.resault {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 2rem;
+  border-radius: 14px;
+  color: var(--White);
+  background: linear-gradient(
+    to top,
+    var(--Lightroyal-blue-background),
+    var(--Lightslate-blue-background)
+  );
+}
+.resault h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.circle {
+  background: linear-gradient(
+    to bottom,
+    var(--Violet-blue),
+    hsla(241, 72%, 46%, 0)
+  );
+  padding: 2.3rem 3rem;
+  border-radius: 7rem;
+  text-align: center;
+}
+.circle > h2 {
+  font-size: 3rem;
+}
+.circle > p {
+  filter: opacity(0.4);
+}
+.description {
+  text-align: center;
+}
+.description h2 {
+  margin-bottom: 1.3rem;
+  font-weight: 900;
+}
+.description p {
+  font-weight: 400;
+  filter: opacity(0.6);
+}
+.summary {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  background-color: var(--White);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+.summary > h2 {
+  font-weight: 500;
+}
+.sum-content {
+  flex: 1 0 0;
+  display: grid;
+  grid-template-areas:
+    "img1 reaction text1"
+    "img2 memory text2"
+    "img3 verbal text3"
+    "img4 visual text4";
+  gap: 0rem;
+}
+p:has(span) {
+  justify-self: end;
+}
+p:has(span) span {
+  font-weight: 700;
+}
+img,
+.red,
+.green,
+.yellow,
+.blue {
+  justify-self: start;
+}
+img {
+  width: fit-content;
+}
+.red {
+  color: var(--Light-red);
+  justify-self: start;
+}
+.green {
+  color: var(--Green-teal);
+}
+.yellow {
+  color: var(--Orangey-yellow);
+}
+.blue {
+  color: var(--Cobalt-blue);
+}
+
+button[type="button"] {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  color: var(--White);
+  background-color: var(--Dark-grayblue);
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.82s ease-in-out;
+}
+button:hover {
+  background-color: var(--Violet-blue);
+}
+footer {
+  color: rgb(0, 0, 0);
+  font-size: 1.6rem;
+}
+@media (min-width: 1200px) {
+  .summray,
+  .resault {
+    max-width: 400px;
+  }
+}
+@media (max-width: 699px) {
+  body {
+    padding: 0px;
+    display: grid;
+  }
+  main {
+    padding: 0px;
+    width: 100%;
+  }
+  main > section {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .resault,
+  .summary {
+    max-width: 100%;
+  }
+  .resault {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+}
